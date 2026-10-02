@@ -12,7 +12,7 @@
       "name": "siteground-deploy",
       "source": "./",
       "description": "Gets a Node.js project live on SiteGround step by step, from fit check to custom domain with HTTPS, and compares SiteGround with Railway. German and English.",
-      "version": "1.0.0"
+      "version": "1.0.1"
     }
   ]
 }

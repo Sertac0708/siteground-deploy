@@ -1,11 +1,12 @@
 {
   "name": "siteground-deploy",
-  "version": "1.0.0",
-  "description": "Gets a Node.js project live on SiteGround step by step: fit check, GitHub auto-deploy or ZIP upload, every dashboard click explained (environment variables, database, cron, SSH key, HTTPS, domain and DNS), automatic verification over SSH, plus a SiteGround vs. Railway comparison. German and English. Unofficial, not affiliated with SiteGround. Created by Sertac · NetBoosting GmbH (https://netboosting.de).",
+  "version": "1.0.1",
+  "description": "Gets a Node.js project live on SiteGround step by step: fit check, GitHub auto-deploy or ZIP upload, every dashboard click explained (environment variables, database, cron, SSH key, HTTPS, domain and DNS), plus a SiteGround vs. Railway comparison. Its helper scripts create an SSH key on your machine and connect over SSH and HTTPS to your own SiteGround site to verify the deploy. German and English. Unofficial, not affiliated with SiteGround. Created by Sertac · NetBoosting GmbH (https://netboosting.de).",
   "author": {
     "name": "Sertac",
     "url": "https://github.com/Sertac0708"
   },
+  "icon": "./icon.png",
   "homepage": "https://github.com/Sertac0708/siteground-deploy",
   "repository": "https://github.com/Sertac0708/siteground-deploy",
   "documentationUrl": "https://github.com/Sertac0708/siteground-deploy#readme",

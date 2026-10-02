@@ -98,8 +98,27 @@ skills/siteground-deploy/
     │   └── vs-railway.md       Vergleich und Umzugs-Checkliste
 ```
 
-Die Skripte lesen dein lokales Projekt und verbinden sich mit **deiner eigenen**
-SiteGround-Seite. Sonst wird nichts irgendwohin gesendet. Siehe [PRIVACY.md](PRIVACY.md).
+## Was das Plugin ausführt und womit es sich verbindet
+
+Das Plugin hat keine Hooks, keinen MCP-Server und keinen Hintergrundprozess. Nichts läuft von
+allein: Claude startet ein Skript nur als Teil der Schritte oben. Vollständig:
+
+| Skript | Was es ausführt | Womit es sich verbindet |
+|---|---|---|
+| `check_fit.py` | Liest `package.json`, Lock-Dateien, das Dockerfile und Quelldateien des Projektordners | Nichts |
+| `make_archive.sh` | `git archive` oder `zip`, schreibt eine Archivdatei neben das Projekt | Nichts |
+| `setup_ssh.sh keygen` | `ssh-keygen`: erzeugt ein Schlüsselpaar in `~/.ssh` auf deinem Rechner und zeigt die öffentliche Hälfte | Nichts |
+| `setup_ssh.sh test` | Eine `ssh`-Anmeldung mit diesem Schlüssel, listet die Ordner der Seite | Deine SiteGround-Seite, Port 18765 |
+| `verify_deploy.sh` | Eine `ssh`-Anmeldung, die Build-Status, aktiven Commit und Build-Protokoll liest; zwei `curl`-Abrufe | Deine SiteGround-Seite (SSH) und deine eigene Domain (HTTP, HTTPS) |
+
+Während der Anleitung kann Claude außerdem `dig` ausführen, um die DNS-Einträge deiner Domain
+nachzuschlagen, und auf deiner SiteGround-Seite SiteGrounds eigenes `site-tools-client`, um
+Einstellungen zu lesen oder den Cache zu leeren.
+
+Das Plugin sendet keine Daten an den Autor oder an Dritte, hat keine Telemetrie und lädt
+nichts herunter. Zugriffstokens, die in SiteGrounds Build-Dateien stehen, werden vor der
+Anzeige maskiert. Passwörter, Tokens und private Schlüssel werden nie im Chat abgefragt. Siehe
+[PRIVACY.md](PRIVACY.md).
 
 ## Wie verlässlich ist das?
 

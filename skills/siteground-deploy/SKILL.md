@@ -6,7 +6,7 @@ license: MIT
 metadata:
   author: Sertac
   publisher: NetBoosting GmbH (https://netboosting.de)
-  version: "1.0.0"
+  version: "1.0.1"
   created: "2026-10-02"
 ---
 
@@ -15,6 +15,9 @@ metadata:
 Take a Node.js project from a folder on the user's machine to a running app on SiteGround,
 reachable under their own domain with HTTPS. Many people using this skill are not developers:
 lead them, one step at a time, and do every part yourself that can be done from a terminal.
+
+**Paths:** `scripts/…` and `references/…` below are relative to this skill's own folder. Run
+the scripts with that folder as prefix, not from the user's project folder.
 
 **Language:** answer in the user's language. The reference files exist in English and German:
 read `references/en/…` or `references/de/…` to match (for any other language, read the English

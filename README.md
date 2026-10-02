@@ -95,8 +95,26 @@ skills/siteground-deploy/
     │   └── vs-railway.md       comparison and moving checklist
 ```
 
-The scripts read your local project and connect to **your own** SiteGround site. Nothing is
-sent anywhere else. See [PRIVACY.md](PRIVACY.md).
+## What the plugin runs and connects to
+
+The plugin has no hooks, no MCP server and no background process. Nothing runs on its own:
+Claude runs a script only as part of the steps above. In full:
+
+| Script | What it runs | What it connects to |
+|---|---|---|
+| `check_fit.py` | Reads `package.json`, lock files, the Dockerfile and source files of the project folder | Nothing |
+| `make_archive.sh` | `git archive` or `zip` to write one archive file next to the project | Nothing |
+| `setup_ssh.sh keygen` | `ssh-keygen`: creates a key pair in `~/.ssh` on your machine and prints the public half | Nothing |
+| `setup_ssh.sh test` | One `ssh` login with that key, lists the site folders | Your SiteGround site, port 18765 |
+| `verify_deploy.sh` | One `ssh` login that reads build status, live commit and build log; two `curl` requests | Your SiteGround site (SSH) and your own domain (HTTP, HTTPS) |
+
+While guiding you, Claude may also run `dig` to look up your domain's DNS records and, on your
+SiteGround site, SiteGround's own `site-tools-client` to read settings or flush the cache.
+
+The plugin sends no data to the author or to any third party, has no telemetry, and downloads
+nothing. Access tokens that appear in SiteGround's build files are masked before output is
+shown. Passwords, tokens and private keys are never requested in the chat. See
+[PRIVACY.md](PRIVACY.md).
 
 ## How reliable is this?
 
