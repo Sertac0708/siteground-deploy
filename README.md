@@ -40,6 +40,14 @@ steps stay with you. The plugin explains each one and checks the result afterwar
 
 ## Installation
 
+**The quick way:** paste this sentence into Claude Code and let it do the rest.
+
+```
+Install the plugin from https://github.com/Sertac0708/siteground-deploy
+```
+
+Claude runs the two commands below for you. Restart Claude Code afterwards.
+
 **Requirements:** [Claude Code](https://claude.com/claude-code) with `ssh`, `git`, `python3`,
 `curl` and `zip` (preinstalled on macOS and most Linux systems), and a SiteGround plan that
 includes Node.js projects (GrowBig, GoGeek or Cloud).
