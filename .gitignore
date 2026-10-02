@@ -1,0 +1,10 @@
+# Nichts Privates ins Repo / nothing private goes into the repo
+.env
+.env.*
+*.pem
+*.key
+*_siteground
+*_siteground.pub
+*.zip
+__pycache__/
+.DS_Store

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <title>SiteGround Deploy</title>
+  <rect width="256" height="256" rx="56" fill="#0f172a"/>
+  <rect x="48" y="150" width="160" height="50" rx="12" fill="#1e293b" stroke="#38bdf8" stroke-width="8"/>
+  <circle cx="76" cy="175" r="8" fill="#4ade80"/>
+  <rect x="100" y="169" width="84" height="12" rx="6" fill="#f8fafc" opacity="0.6"/>
+  <line x1="128" y1="128" x2="128" y2="64" stroke="#fbbf24" stroke-width="14" stroke-linecap="round"/>
+  <polyline points="98,90 128,58 158,90" fill="none" stroke="#fbbf24" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
